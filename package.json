@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
+    "start": "concurrently \"web-dev-server\" \"cem analyze --watch\""
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.12",
+    "@open-wc/building-rollup": "^1.10.0",
+    "@simplr-wc/prettier-config": "^1.0.3",
+    "@web/dev-server": "^0.1.18",
+    "concurrently": "^6.2.0",
+    "deepmerge": "^4.2.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.53.2"
+  },
+  "name": "weapawn-shop",
+  "version": "0.0.0",
+  "description": "Webcomponent weapawn-shop following open-wc recommendations",
+  "author": "weapawn-shop",
+  "license": "MIT",
+  "dependencies": {
+    "lit": "*"
+  },
+  "prettier": "@simplr-wc/prettier-config",
+  "customElements": "custom-elements.json"
+}

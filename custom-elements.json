@@ -1,0 +1,302 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/WeapawnShop.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "WeapawnShop",
+          "members": [
+            {
+              "kind": "field",
+              "name": "properties",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "weapawn-shop",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "WeapawnShop",
+          "declaration": {
+            "name": "WeapawnShop",
+            "module": "src/WeapawnShop.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/weapawn-shop.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "weapawn-shop",
+          "declaration": {
+            "name": "WeapawnShop",
+            "module": "/src/WeapawnShop.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/DragTarget.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DragTarget",
+          "members": [
+            {
+              "kind": "field",
+              "name": "properties",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "firstUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "_onDrag",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDrop",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "currentDragComponent",
+              "type": {
+                "text": "null"
+              },
+              "default": "null"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "drag-target",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DragTarget",
+          "declaration": {
+            "name": "DragTarget",
+            "module": "src/components/DragTarget.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "drag-target",
+          "declaration": {
+            "name": "DragTarget",
+            "module": "src/components/DragTarget.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/Draggable.js",
+      "declarations": [
+        {
+          "kind": "mixin",
+          "description": "",
+          "name": "Draggable",
+          "members": [
+            {
+              "kind": "method",
+              "name": "firstUpdated"
+            },
+            {
+              "kind": "method",
+              "name": "_onDraggableDragStart",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onDraggableDragEnd",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true
+            }
+          ],
+          "parameters": [
+            {
+              "name": "superclass"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Draggable",
+          "declaration": {
+            "name": "Draggable",
+            "module": "src/components/Draggable.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/TechComponent.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "TechComponent",
+          "members": [
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true,
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "firstUpdated",
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            },
+            {
+              "kind": "method",
+              "name": "_onDraggableDragStart",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_onDraggableDragEnd",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
+            }
+          ],
+          "mixins": [
+            {
+              "name": "Draggable",
+              "module": "/src/components/Draggable"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "tech-component",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TechComponent",
+          "declaration": {
+            "name": "TechComponent",
+            "module": "src/components/TechComponent.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "tech-component",
+          "declaration": {
+            "name": "TechComponent",
+            "module": "src/components/TechComponent.js"
+          }
+        }
+      ]
+    }
+  ]
+}
