@@ -22,14 +22,11 @@ export class DragTarget extends LitElement {
 
     _onDrag(e) {
         this.currentDragComponent = e.detail.target;
-        console.log("OnDrag", e);
     }
 
     _onDrop(e) {
-        console.log("OnDrop", e);
         const target = e.detail.target;
         const offset = e.detail.position;
-        console.log("Target", target);
         // TODO: Check if can be dropped
 
         target.style.setProperty("--top-offset", offset.y + "px");

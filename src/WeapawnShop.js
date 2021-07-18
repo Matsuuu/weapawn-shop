@@ -12,8 +12,8 @@ export class WeapawnShop extends LitElement {
         return css`
 
         drag-target {
-            width: 800px;
-            height: 800px;
+            width: 1600px;
+            height: 1600px;
             background-color: darkslategrey;
         }
     `;
@@ -28,6 +28,7 @@ export class WeapawnShop extends LitElement {
 
             <drag-target>
                 <tech-component></tech-component>
+                <tech-component .posX=${300} .posY=${150}></tech-component>
                 
             </drag-target>
     `;

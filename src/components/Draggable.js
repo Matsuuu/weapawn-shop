@@ -30,13 +30,14 @@ export function Draggable(superclass) {
          * @param {DragEvent} e
          */
         _onDraggableDragStart(e) {
-            console.log(e);
             // Create clone node
             dragElementCopy = /*this.cloneNode(true);*/ document.createElement("span");
             dragElementCopy.setAttribute('ghost', '');
             this.parentNode.appendChild(dragElementCopy);
 
             e.dataTransfer.setDragImage(dragElementCopy, e.offsetX, e.offsetY);
+
+            console.log(e);
 
             this.setAttribute('dragging', '');
             this.draggableDragOffset = { x: e.offsetX, y: e.offsetY };

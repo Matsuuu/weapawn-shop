@@ -225,12 +225,8 @@
           "members": [
             {
               "kind": "field",
-              "name": "styles",
-              "static": true,
-              "inheritedFrom": {
-                "name": "Draggable",
-                "module": "src/components/Draggable.js"
-              }
+              "name": "properties",
+              "static": true
             },
             {
               "kind": "method",
@@ -243,6 +239,31 @@
             {
               "kind": "method",
               "name": "render"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true,
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "posX",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "posY",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
             },
             {
               "kind": "method",
