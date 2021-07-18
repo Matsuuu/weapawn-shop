@@ -1,5 +1,6 @@
 import { css } from 'lit';
 import { COMPONENT_DRAG, COMPONENT_DROP } from '../constants/events';
+import { DRAG_INTERVAL } from '../constants/options';
 import { roundTo } from '../util/rounding';
 
 let dragElementCopy;
@@ -11,8 +12,18 @@ export function Draggable(superclass) {
 
             this.addEventListener('dragstart', this._onDraggableDragStart);
             this.addEventListener('dragend', this._onDraggableDragEnd);
+            this.addEventListener('drag', this._onDraggableDrag);
 
             this.draggableDragOffset = { x: 0, y: 0 };
+        }
+
+        /**
+         * @param {DragEvent} e
+         */
+        _onDraggableDrag(e) {
+            if (e.x === 0 && e.y === 0) return;
+            this.style.setProperty("--top-offset", e.y - this.draggableDragOffset.y + "px");
+            this.style.setProperty("--left-offset", e.x - this.draggableDragOffset.x + "px");
         }
 
         /**
@@ -21,9 +32,10 @@ export function Draggable(superclass) {
         _onDraggableDragStart(e) {
             console.log(e);
             // Create clone node
-            dragElementCopy = this.cloneNode(true);
+            dragElementCopy = /*this.cloneNode(true);*/ document.createElement("span");
             dragElementCopy.setAttribute('ghost', '');
             this.parentNode.appendChild(dragElementCopy);
+
             e.dataTransfer.setDragImage(dragElementCopy, e.offsetX, e.offsetY);
 
             this.setAttribute('dragging', '');
@@ -36,13 +48,11 @@ export function Draggable(superclass) {
          * @param {DragEvent} e
          */
         _onDraggableDragEnd(e) {
-            console.log(e);
             this.draggableDragOffset = {
-                x: roundTo(e.x - this.draggableDragOffset.x, 50),
-                y: roundTo(e.y - this.draggableDragOffset.y, 50),
+                x: roundTo(e.x - this.draggableDragOffset.x, DRAG_INTERVAL),
+                y: roundTo(e.y - this.draggableDragOffset.y, DRAG_INTERVAL),
             }
 
-            console.log(this.draggableDragOffset);
             window.dispatchEvent(new CustomEvent(COMPONENT_DROP, { detail: { target: this, position: this.draggableDragOffset } }));
 
             this.removeAttribute('dragging');
@@ -59,7 +69,6 @@ export function Draggable(superclass) {
                 }
 
                 :host([dragging]) {
-                    opacity: 0;
                     cursor: grabbing;
                 }
 

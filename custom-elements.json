@@ -156,6 +156,18 @@
             },
             {
               "kind": "method",
+              "name": "_onDraggableDrag",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_onDraggableDragStart",
               "parameters": [
                 {
@@ -231,6 +243,22 @@
             {
               "kind": "method",
               "name": "render"
+            },
+            {
+              "kind": "method",
+              "name": "_onDraggableDrag",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "DragEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "Draggable",
+                "module": "src/components/Draggable.js"
+              }
             },
             {
               "kind": "method",
